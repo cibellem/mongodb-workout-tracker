@@ -60,7 +60,9 @@
         </div>
 
         <div class="container hide resistenceContainer">
-            <form action="">
+
+
+            <form class="create-form">
                 <label for="exName">Exercise Names:</label>
                 <div class="col-md-6 col-sm-12">
                     <input type="text " class="form-control" name="exName" id="exName">
@@ -73,25 +75,27 @@
                 <label for="sets">Sets:</label>
 
                 <div class="col-md-6 col-sm-12">
-                    <input class="form-control  " type="text">
+                    <input class="form-control  " id="sets" type="text">
                 </div>
 
                 <label for="reps">Reps:</label>
 
                 <div class="col-md-6 col-sm-12">
-                    <input class="form-control " type="text">
+                    <input class="form-control " id="reps" type="text">
                 </div>
                 <label for="duration">Duration(minutes):</label>
                 <div class="col-md-6 col-sm-12">
-                    <input class="form-control " type="text">
+                    <input class="form-control " id="duration" type="text">
                 </div>
                 <div class="col-md-6 my-2 col-sm-12">
-                    <input type="button" class="col-6 " value="Complete">
+                    <button class=" form-control  col-6 " id="resistanceComplete">Complete</button>
                 </div>
             </form>
         </div>
+
+
         <div class="container hide cardioContainer">
-            <form action="">
+            <form class="create-form-cardio">
 
 
 
@@ -115,7 +119,7 @@
                 </div>
 
                 <div class="col-md-6 my-2 col-sm-12">
-                    <input type="button" class="col-6 " value="Complete">
+                    <input type="button" class="col-6 " id="cardioComplete" value="Complete">
                 </div>
             </form>
 

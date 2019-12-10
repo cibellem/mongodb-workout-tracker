@@ -16,7 +16,7 @@ app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 app.use(express.static("public"))
 
-
+// require("./routes/apiRoutes.js")(app);
 // Set Handlebars.
 // var exphbs = require("express-handlebars");
 
@@ -32,11 +32,14 @@ app.listen(PORT, () => {
 });
 
 
-app.get("/resistance", function (err, res) {
-    Workout.find({}).then((data) => {
-        console.log(data)
-    }).catch((err) => {
-        console.log(err);
+app.post("/api/workouts", function (req, res) {
+
+    var workout = new Workout(req.body)
+
+    workout.save(err => {
+        if (err) return res.status(500).send(err);
+        return res.status(200).send(workout);
     })
 })
-module.exports = app;
+
+module.exports = app

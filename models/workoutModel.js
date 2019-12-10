@@ -7,13 +7,14 @@ const Schema = mongoose.Schema;
 const workoutSchema = new Schema({
 
     exName: {
-        type: [],
-        trim: true
-    },
+
+        type: String
+    }
+    ,
 
     rep: {
         type: Number,
-        trim: true
+
     },
 
     weight: {
@@ -23,11 +24,13 @@ const workoutSchema = new Schema({
 
     sets: {
         type: Number,
-        trim: true
+
     },
+
+
     duration: {
         type: Number,
-        trim: true
+
     },
 
     created: {

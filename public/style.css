@@ -7,7 +7,6 @@ body {
     
 }
 
-
 .btnAdd{
     
     display: inline-block;
@@ -30,8 +29,7 @@ body {
    background-color: #dddddd;
    text-decoration: none;
    border-bottom: solid 3px #c5c3c3;
-    
-    
+        
 }
 
 .container{
