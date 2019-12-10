@@ -6,46 +6,138 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+
+
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"
+        integrity="sha256-4iQZ6BVL4qNKlQ27TExEhBN1HFPvAvAMbFavKKosSWQ=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+
     <link rel="stylesheet" href="style.css">
+
 
     <title>Workout Tracker</title>
 </head>
 
 <body>
-    <header class="my-5 ">
+    <!-- <header class="my-5 ">
         <h1>Workout Tracker</h1>
-    </header>
+    </header> -->
+    <!-- w-100 -->
 
-
-    <div class="container rounded shadow p-4 mb-4 w-50 my-5  bg-white">
+    <div class="  container  mb-4 my-4">
         <div class="row">
-            <div class="col-6 text-center">
-                <h3>Add New Workout</h3>
+            <div class="col-12 text-center">
+                <h2 class="logo"> Easy Fit Tracker </h2>
 
 
-            </div>
-            <div class="col-6 text-center">
-                <button class="btn btnAdd btn-success">+</button>
+                <div class="my-5">
+                    <p class="greeting">Welcome back! <br>
+                        <p class="timeNow"></p>
+                    </p>
+
+                </div>
+                <h4 class="text-white ">Click to add a new Exercise</h4>
+                <div class="drop-right">
+                    <a class="btn btnAdd " href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                        +
+                    </a>
+
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                        <a class="dropdown-item btnCardio " href="#">Cardio</a>
+                        <a class="dropdown-item  btnResistence" href="">Resistence</a>
+                    </div>
+                </div>
+
 
             </div>
         </div>
 
+        <div class="container hide resistenceContainer">
+            <form action="">
+                <label for="exName">Exercise Names:</label>
+                <div class="col-md-6 col-sm-12">
+                    <input type="text " class="form-control" name="exName" id="exName">
+                </div>
+                <label for="weights">Weights(lbs):</label>
 
-        <div class="row">
-            <div class="col">
+                <div class="col-md-6 col-sm-12">
+                    <select class="form-control  " name="weights" id="weights"></select>
+                </div>
+                <label for="sets">Sets:</label>
 
+                <div class="col-md-6 col-sm-12">
+                    <input class="form-control  " type="text">
+                </div>
 
-                <!-- <h5>Workout</h5> -->
+                <label for="reps">Reps:</label>
 
-
-            </div>
+                <div class="col-md-6 col-sm-12">
+                    <input class="form-control " type="text">
+                </div>
+                <label for="duration">Duration(minutes):</label>
+                <div class="col-md-6 col-sm-12">
+                    <input class="form-control " type="text">
+                </div>
+                <div class="col-md-6 my-2 col-sm-12">
+                    <input type="button" class="col-6 " value="Complete">
+                </div>
+            </form>
         </div>
+        <div class="container hide cardioContainer">
+            <form action="">
+
+
+
+                <label for="exName"> Name</label>
+
+
+                <div class="col-md-6 col-sm-12">
+                    <input type="text " class="form-control" name="exName" id="CardioName">
+                </div>
+
+                <label for="sets">Distance:</label>
+
+                <div class="col-md-6 col-sm-12">
+                    <input class="form-control  " id="distance" type="text">
+                </div>
+
+                <label for="duration">Duration(minutes):</label>
+
+                <div class="col-md-6 col-sm-12">
+                    <input class="form-control " id="durationCardio" type=" text">
+                </div>
+
+                <div class="col-md-6 my-2 col-sm-12">
+                    <input type="button" class="col-6 " value="Complete">
+                </div>
+            </form>
+
+
+        </div>
+
+
     </div>
 
+
+
+
+
+
+
     <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
     <script src="app.js"></script>
 
 </body>

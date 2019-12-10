@@ -4,10 +4,10 @@ const Schema = mongoose.Schema;
 
 //creates a new schema to my wtracker database which behaves like a table in MySQL in mongoDB it's a collection
 // Im declaring the properties and type of data my documents will hold
-const exerciseSchema = new Schema({
+const workoutSchema = new Schema({
 
-    name: {
-        type: String,
+    exName: {
+        type: [],
         trim: true
     },
 
@@ -18,9 +18,26 @@ const exerciseSchema = new Schema({
 
     weight: {
         type: Number,
+
+    },
+
+    sets: {
+        type: Number,
         trim: true
+    },
+    duration: {
+        type: Number,
+        trim: true
+    },
+
+    created: {
+        type: Date,
+        default: Date.now
     }
+
 })
 
-const Exercise = mongoose.model("Exercise", exerciseSchema);
-module.exports = Exercise;
+
+
+const Workout = mongoose.model("Workout", workoutSchema);
+module.exports = Workout;
