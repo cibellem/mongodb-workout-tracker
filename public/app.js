@@ -28,15 +28,15 @@ $btnCardio.on("click", function (event) {
     cardioDiv.show()
 })
 
+//when form it's submitted a post request it's sent to the server
 
 $(".create-form").on("submit", function (event) {
 
     event.preventDefault();
 
-
     var newRecord = {
         exName: $("#exName").val().trim(),
-        // weight: $("#weights").val().trim(),
+        weight: $("#weights").val().trim(),
         sets: $("#sets").val().trim(),
         rep: $("#reps").val().trim(),
         duration: $("#duration").val().trim(),
@@ -45,7 +45,38 @@ $(".create-form").on("submit", function (event) {
 
     console.log(newRecord)
 
+    $.ajax({
+        url: "/api/workouts",
+        type: "POST",
+        data: newRecord
 
+
+        // headers: {
+        //     Accept: "application/json, text/plain, */*",
+        //     "Content-Type": "application/json"
+        // },
+        // body: JSON.stringify(newRecord)
+    }).then(function () {
+        console.log("worked")
+    })
+
+
+})
+
+
+$(".create-form-cardio").on("submit", function (event) {
+
+    event.preventDefault();
+
+
+    var newRecord = {
+        exName: $("#CardioName").val().trim(),
+        distance: $("#distance").val().trim(),
+        duration: $("#durationCardio").val().trim(),
+
+    };
+
+    console.log(newRecord)
 
     $.ajax({
         url: "/api/workouts",

@@ -6,37 +6,18 @@ const Schema = mongoose.Schema;
 // Im declaring the properties and type of data my documents will hold
 const workoutSchema = new Schema({
 
-    exName: {
-
-        type: String
-    }
-    ,
-
-    rep: {
-        type: Number,
-
-    },
-
-    weight: {
-        type: Number,
-
-    },
-
-    sets: {
-        type: Number,
-
-    },
-
-
-    duration: {
-        type: Number,
-
-    },
-
+    exName: String,
+    rep: Number,
+    weight: Number,
+    sets: Number,
+    duration: Number,
+    distance: Number,
     created: {
         type: Date,
         default: Date.now
     }
+
+
 
 })
 

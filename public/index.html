@@ -43,7 +43,7 @@
 
                 </div>
                 <h4 class="text-white ">Click to add a new Exercise</h4>
-                <div class="drop-right">
+                <div class="dropright">
                     <a class="btn btnAdd " href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
                         aria-haspopup="true" aria-expanded="false">
                         +
@@ -63,14 +63,18 @@
 
 
             <form class="create-form">
-                <label for="exName">Exercise Names:</label>
+                <label for="exName">Exercise Name:</label>
                 <div class="col-md-6 col-sm-12">
                     <input type="text " class="form-control" name="exName" id="exName">
                 </div>
                 <label for="weights">Weights(lbs):</label>
 
                 <div class="col-md-6 col-sm-12">
-                    <select class="form-control  " name="weights" id="weights"></select>
+
+
+                    <input type="number" class="form-control" name="quantity" min="1" max="200" name="weights"
+                        id="weights">
+
                 </div>
                 <label for="sets">Sets:</label>
 
@@ -96,9 +100,6 @@
 
         <div class="container hide cardioContainer">
             <form class="create-form-cardio">
-
-
-
                 <label for="exName"> Name</label>
 
 
@@ -119,7 +120,8 @@
                 </div>
 
                 <div class="col-md-6 my-2 col-sm-12">
-                    <input type="button" class="col-6 " id="cardioComplete" value="Complete">
+                    <button class=" form-control  col-6 " id="cardioComplete">Complete</button>
+
                 </div>
             </form>
 
