@@ -1,53 +1,140 @@
 body {
+    background-color : #91bd3a;
+
+  
+}
+
+
+
+.logo {
+    font-family: 'Lato', sans-serif;
+    letter-spacing: 1px;
+    color: white;
    
-    background-color: white;
+   font-size: 50px;
+}
+.newEx{
+    font-family: 'Padauk', sans-serif;
+    font-size: 18px;
+    color: black;
+    font-weight: bold;
     
-    background: rgb(173,83,137);
-    background: linear-gradient(90deg, rgba(173,83,137,1) 7%, rgba(60,16,83,1) 98%, rgba(60,16,83,1) 100%);
+
+
+}
+.greeting {
+
+    font-family: 'Lato', sans-serif;
+    font-size: 35px;
+    font-weight: lighter;
+    color: white;
+    margin-top: 0 auto;
+
+}
+.timeNow{
+    color:white;
+    letter-spacing: 0.5px;
     
 }
 
-.btnAdd{
-    
+.btnAdd {
+
     display: inline-block;
-    border-radius: 50%;
-    width: 80px;
-    height: 80px;
-    line-height: 55px;
-    overflow: hidden;
-    box-shadow: 0px 6px 4px rgba(0, 0, 0, 0.30);
-    /* border-bottom: solid 3px #927474; */
-    margin-top: 20px;
+    border-radius: 70%;
+     width: 100px;
+    height: 100px;
+    line-height: 80px; 
+    box-shadow: 0px 6px 4px rgba(0, 0, 0, 0.616);
     transition: .6s;
     text-align: center;
     vertical-align: middle;
-    font-weight: bold;   
-    color: silver;
-    font-size: 50px;    
+    
+    background-color: #dddddd;    
+    text-decoration: none;
+    font-family: 'Padauk', sans-serif;
+    border-bottom: solid 3px #c5c3c3;
+    font-size: 15px;    
+    padding: 5px;
     opacity: 0.5;
-   /* background-color: #bb5795; */
-   background-color: #dddddd;
-   text-decoration: none;
-   border-bottom: solid 3px #c5c3c3;
-        
+    letter-spacing: 1.5px;
+    color:black;
+    text-shadow: 1px 1px 2px silver;
+
+}
+
+
+
+/*  */
+
+.addNew{
+    color: white;
+}
+
+form{
+  justify-items: center;
+  padding: 0 !important;
+  display: inline !important;
+  
+  font-family: 'Lato', sans-serif;
+  letter-spacing: 0.5;
+  
+}
+
+input{
+    list-style: none;
+    text-decoration: none;
 }
 
 .container{
-   color:#dddddd;
-    border-radius: 20px;
-    padding: 20px;
-    letter-spacing: 0.5;
-}
-
-
-.greeting {
-    color:silver;
-}
-
-.resistenceContainer{
-   float: right;
+   margin: auto;
 }
 
 .hide {
     display: none;
 }
+
+.centerDiv{
+  align-content: center;
+}
+
+
+
+#resistanceComplete , #cardioComplete{
+    background-color:  #f7623b;
+    
+ 
+
+    color: white;
+    letter-spacing: 0.5;
+    font-weight: bolder;
+    align-content: center !important;
+    border: none;
+    letter-spacing: 1px;
+}
+
+.cardioContainer{
+ color:black
+    
+}
+
+@media screen and (max-width: 576px) { 
+
+    
+form {
+    width: 100%;
+    margin-left: auto;
+  }
+.logo{
+    font-size: 40px;
+}
+.greeting{
+    display: none;
+}
+  
+.btnAdd{
+    margin-top: 5px;
+}
+}
+
+
+

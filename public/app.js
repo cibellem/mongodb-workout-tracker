@@ -8,7 +8,7 @@ const $btnResistence = $(".btnResistence")
 
 //appends time and day to greeting page
 
-const today = moment().format('dddd');
+const today = moment().format('LL')
 const timeNow = moment().format('LT');
 const $timeNow = $(".timeNow");
 $timeNow.append(today + " " + timeNow);
@@ -30,21 +30,18 @@ $btnCardio.on("click", function (event) {
 
 //when form it's submitted a post request it's sent to the server
 
-$(".create-form").on("submit", function (event) {
-
+$("#resistanceComplete").on("click", function (event) {
+    console.log(event.target)
     event.preventDefault();
-
     var newRecord = {
         exName: $("#exName").val().trim(),
         weight: $("#weights").val().trim(),
         sets: $("#sets").val().trim(),
         rep: $("#reps").val().trim(),
         duration: $("#duration").val().trim(),
-
     };
 
     console.log(newRecord)
-
     $.ajax({
         url: "/api/workouts",
         type: "POST",
@@ -58,17 +55,51 @@ $(".create-form").on("submit", function (event) {
         // body: JSON.stringify(newRecord)
     }).then(function () {
         console.log("worked")
+        location.reload();
+
     })
 
 
 })
 
 
-$(".create-form-cardio").on("submit", function (event) {
+$("#resistanceUpdate").on("click", function (event) {
 
     event.preventDefault();
+    var newRecord = {
+        exName: $("#exName").val().trim(),
+        weight: $("#weights").val().trim(),
+        sets: $("#sets").val().trim(),
+        rep: $("#reps").val().trim(),
+        duration: $("#duration").val().trim(),
+    };
+    var id = $(this).data("id");
+
+    console.log(newRecord)
+    $.ajax({
+        url: "/api/workouts" + id,
+        type: "PUT",
+        data: newRecord
 
 
+        // headers: {
+        //     Accept: "application/json, text/plain, */*",
+        //     "Content-Type": "application/json"
+        // },
+        // body: JSON.stringify(newRecord)
+    }).then(function () {
+
+
+        console.log("worked")
+        location.reload();
+    })
+
+
+})
+
+$("#cardioComplete").on("click", function (event) {
+
+    event.preventDefault();
     var newRecord = {
         exName: $("#CardioName").val().trim(),
         distance: $("#distance").val().trim(),
@@ -91,5 +122,66 @@ $(".create-form-cardio").on("submit", function (event) {
         // body: JSON.stringify(newRecord)
     }).then(function () {
         console.log("worked")
+        location.reload();
+
     })
 })
+
+
+
+$("#cardioUpdate").on("click", function (event) {
+
+    event.preventDefault();
+    var newRecord = {
+        exName: $("#CardioName").val().trim(),
+        distance: $("#distance").val().trim(),
+        duration: $("#durationCardio").val().trim(),
+
+    };
+
+    var id = $(this).data("id");
+
+    console.log(newRecord)
+
+    $.ajax({
+        url: "/api/workouts/" + id,
+        type: "PUT",
+        data: newRecord
+
+
+        // headers: {
+        //     Accept: "application/json, text/plain, */*",
+        //     "Content-Type": "application/json"
+        // },
+        // body: JSON.stringify(newRecord)
+    }).then(function () {
+        console.log("worked")
+        location.reload();
+
+    })
+})
+
+
+
+
+
+
+// $("#showAll").on("click", function () {
+
+//     console.log("working")
+
+//     $.ajax({
+//         url: "/api/workouts",
+//         type: "GET",
+//     }).then(function (data) {
+
+//         console.log(data)
+//         let recentWorkoutDiv = $("<div>");
+//         let recent = $("<button>");
+//         recent.innerHtml = data.exName
+//         recentWorkoutDiv.append(recent);
+//         $(".container").append(recentWorkoutDiv);
+
+
+//     })
+// })

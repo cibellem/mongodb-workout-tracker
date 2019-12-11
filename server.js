@@ -33,13 +33,28 @@ app.post("/api/workouts", function (req, res) {
     })
 })
 
-app.post("/api/workouts", function (req, res) {
-    var workout = new Workout(req.body)
+app.get("/api/workouts", function (req, res) {
 
-    workout.save(err => {
-        if (err) return res.status(500).send(err);
-        return res.status(200).send(workout);
+    Workout.find({}).then(function (data, err) {
+        if (err) throw err
+        res.send(data)
     })
 })
+
+
+//    
+app.put("/api/workouts/:id", function (req, res) {
+    var query = req.body
+    Workout.findOneAndUpdate(query {}, sort({ date: -1 }).then(function (err, docs) {
+
+        console.log(docs)// executes
+        if (err) throw err
+
+
+
+    })
+    )
+})
+
 
 module.exports = app
