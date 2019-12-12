@@ -9,14 +9,12 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
         integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
         crossorigin="anonymous"></script>
-
     <link href="https://fonts.googleapis.com/css?family=Lato|Padauk&display=swap" rel="stylesheet">
-
-    <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"
         integrity="sha256-4iQZ6BVL4qNKlQ27TExEhBN1HFPvAvAMbFavKKosSWQ=" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/9b22d73af0.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
 
     <link rel="stylesheet" href="style.css">
@@ -26,23 +24,52 @@
 </head>
 
 <body>
-    <!-- <header class="my-5 ">
-        <h1>Workout Tracker</h1>
-    </header> -->
-    <!-- w-100 -->
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col">
+
+                            <p class="succesModal align-center">Saved!</p>
+                        </div>
+                        <div class="col">
+                            <i class="fas fa-times btn closeIcon" data-dismiss="modal"></i>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- end of modal -->
+
 
     <div class=" container ">
+
+
+
+
+
+
+
         <div class=" row">
             <div class="col-md-12 text-center">
-                <h2 class="logo my-2"> Easy Fit Tracker </h2>
-                <p class="greeting">Welcome back, <br>
-                    <p class="timeNow"></p>
+                <h2 class="logo my-2"> Easy Workout Tracker </h2>
+
+                <small class="recentTitle">Recents</small>
+                <div class="allWorkouts"></div>
+                <p class="timeNow"></p>
                 </p>
                 <div class="row">
                     <div class="col-6 text-right">
 
                         <a class="btn btnAdd btnCardio" href="#" role="button" id=" " aria-haspopup="true"
                             aria-expanded="false">
+                            <small>new</small>
                             Cardio
                         </a>
 
@@ -52,7 +79,8 @@
                     <div class="col-6 text-left ">
                         <a class="btn btnAdd btnResistence " href="#" role="button" id="showAll " aria-haspopup="true"
                             aria-expanded="false">
-                            Resistance
+                            <small>new</small>
+                            Weights
                         </a>
 
                     </div>
@@ -64,8 +92,8 @@
             <div class="container hide resistenceContainer">
                 <div class="row  ">
 
-                    <div class="col-12 centerDiv">
-                        <form class="create-form formResistance">
+                    <div class="col-12  centerDiv">
+                        <form class="create-form  text-center  inline-block formResistance">
                             <label for="exName">Exercise Name:</label>
                             <div class="  col-md-6 col-sm-12">
                                 <input type="text " class="form-control" name="exName" id="exName">
@@ -97,13 +125,14 @@
 
 
                             <div class="col-md-6  col-sm-12">
-                                <div class="row my-1">
-                                    <div class="col-md-6  ">
-                                        <button class=" form-control  " id="resistanceComplete">Submit</button>
+                                <div class="row my-2">
+                                    <div class="col-md-12 ">
+                                        <button class=" form-control " data-toggle="modal" data-target="#myModal "
+                                            id="resistanceComplete">Submit</button>
                                     </div>
-                                    <div class="col-md-6  text-left">
-                                        <button class=" form-control  " id="resistanceUpdate">Update</button>
-                                    </div>
+
+
+
 
                                 </div>
                             </div>
@@ -139,17 +168,14 @@
                                 <input class="form-control " id="durationCardio" type=" text">
                             </div>
                             <div class="col-md-6  col-sm-6">
-                                <div class="row my-1 ">
-                                    <div class="col-md-6">
-                                        <button class=" form-control " id="cardioComplete">Submit</button>
+                                <div class="row my-2 ">
+                                    <div class="col-md-12">
+                                        <button class=" form-control " data-toggle="modal" data-target="#myModal "
+                                            id="cardioComplete">Submit</button>
 
 
                                     </div>
-                                    <div class="col-md-6">
 
-                                        <button class=" form-control " id="cardioUpdate">Update</button>
-
-                                    </div>
 
                                 </div>
                             </div>
@@ -168,7 +194,6 @@
 
 
         </div>
-
 
 
 

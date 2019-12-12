@@ -22,15 +22,7 @@ body {
 
 
 }
-.greeting {
 
-    font-family: 'Lato', sans-serif;
-    font-size: 35px;
-    font-weight: lighter;
-    color: white;
-    margin-top: 0 auto;
-
-}
 .timeNow{
     color:white;
     letter-spacing: 0.5px;
@@ -40,31 +32,53 @@ body {
 .btnAdd {
 
     display: inline-block;
-    border-radius: 70%;
+    border-radius: 65%;
      width: 100px;
-    height: 100px;
-    line-height: 80px; 
+    height: 80px;     
     box-shadow: 0px 6px 4px rgba(0, 0, 0, 0.616);
     transition: .6s;
     text-align: center;
     vertical-align: middle;
-    
+    margin-top: 5px;    
     background-color: #dddddd;    
     text-decoration: none;
     font-family: 'Padauk', sans-serif;
     border-bottom: solid 3px #c5c3c3;
     font-size: 15px;    
-    padding: 5px;
+    
     opacity: 0.5;
-    letter-spacing: 1.5px;
+    letter-spacing: 1.0px;
     color:black;
     text-shadow: 1px 1px 2px silver;
 
 }
 
+.small{
+    color: silver;
+}
 
+.recentBtn {
+    
 
-/*  */
+    border-radius: 10px;
+    width: 80px;       
+    text-align: center;
+    vertical-align: middle;
+    background-color: greenyellow;      
+    text-decoration: none;
+    font-family: 'Padauk', sans-serif;  
+    font-size: 16px;      
+    margin-right: 5px;
+    letter-spacing: 0.5px;
+    border: 2px gray ;
+    color: black;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 8px;
+    text-shadow: 1px 1px 2px silver;
+    box-shadow: 0px 2px 4px rgba(78, 77, 77, 0.616);
+}
+
 
 .addNew{
     color: white;
@@ -73,8 +87,7 @@ body {
 form{
   justify-items: center;
   padding: 0 !important;
-  display: inline !important;
-  
+  display: inline !important;  
   font-family: 'Lato', sans-serif;
   letter-spacing: 0.5;
   
@@ -83,12 +96,52 @@ form{
 input{
     list-style: none;
     text-decoration: none;
+    box-shadow: 1px 1px rgba(0, 0, 0, 0.616);
+    outline-style: none !important;
 }
 
 .container{
    margin: auto;
 }
 
+.closeIcon {
+    font-size: 25px;
+    color: silver;
+}
+.succesModal{
+    font-size: 25px;
+    margin-left:auto; 
+    font-family: 'Lato', sans-serif;
+    letter-spacing: 0.5;
+    color: silver;
+    
+}
+/* input[type="text"],
+select.form-control, input{
+  
+  border: none;
+  text-decoration: none;
+  border-radius: 0;
+} */
+
+
+input[type="text"]:focus,
+select.form-control:focus,
+input:focus {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+ 
+}
+    
+.recentTitle{
+    font-size: 25px;
+    font-family: 'Padauk', sans-serif;  
+    letter-spacing: 0.5px;
+    font-weight: lighter;
+    color: white;
+    margin-top: 0 auto;
+
+}
 .hide {
     display: none;
 }
@@ -100,9 +153,19 @@ input{
 
 
 #resistanceComplete , #cardioComplete{
-    background-color:  #f7623b;
-    
- 
+    background-color:  #f7623b; 
+
+    color: white;
+    letter-spacing: 0.5;
+    font-weight: bolder;
+    align-content: center !important;
+    border: none;
+    letter-spacing: 1px;
+}
+
+#cardioUpdate, #updateResistance {
+
+    background-color:  gold;   
 
     color: white;
     letter-spacing: 0.5;

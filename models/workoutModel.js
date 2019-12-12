@@ -12,6 +12,8 @@ const workoutSchema = new Schema({
     sets: Number,
     duration: Number,
     distance: Number,
+
+
     created: {
         type: Date,
         default: Date.now

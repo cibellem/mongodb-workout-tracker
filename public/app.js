@@ -4,16 +4,17 @@ const resistanceDiv = $(".resistenceContainer");
 const cardioDiv = $(".cardioContainer");
 const $btnCardio = $(".btnCardio");
 const $btnResistence = $(".btnResistence")
+const $appendDiv = $("#appendDiv")
 
 
-//appends time and day to greeting page
+//appends time and day to  page
 
 const today = moment().format('LL')
 const timeNow = moment().format('LT');
 const $timeNow = $(".timeNow");
 $timeNow.append(today + " " + timeNow);
 
-//when resistance button it's clicked
+//when resistance button it's clicked the div for cardio it's  hidden
 
 $btnResistence.on("click", function (event) {
     event.preventDefault()
@@ -21,7 +22,7 @@ $btnResistence.on("click", function (event) {
     resistanceDiv.show()
 
 })
-//when cardio button it's clicked
+//when cardio button it's clicked the div for resistance it's hidden
 $btnCardio.on("click", function (event) {
     event.preventDefault()
     resistanceDiv.hide()
@@ -46,16 +47,9 @@ $("#resistanceComplete").on("click", function (event) {
         url: "/api/workouts",
         type: "POST",
         data: newRecord
-
-
-        // headers: {
-        //     Accept: "application/json, text/plain, */*",
-        //     "Content-Type": "application/json"
-        // },
-        // body: JSON.stringify(newRecord)
     }).then(function () {
         console.log("worked")
-        location.reload();
+
 
     })
 
@@ -63,39 +57,34 @@ $("#resistanceComplete").on("click", function (event) {
 })
 
 
-$("#resistanceUpdate").on("click", function (event) {
+// $("#resistanceUpdate").on("click", function (event) {
 
-    event.preventDefault();
-    var newRecord = {
-        exName: $("#exName").val().trim(),
-        weight: $("#weights").val().trim(),
-        sets: $("#sets").val().trim(),
-        rep: $("#reps").val().trim(),
-        duration: $("#duration").val().trim(),
-    };
-    var id = $(this).data("id");
+//     event.preventDefault();
+//     var newRecord = {
+//         exName: $("#exName").val().trim(),
+//         weight: $("#weights").val().trim(),
+//         sets: $("#sets").val().trim(),
+//         rep: $("#reps").val().trim(),
+//         duration: $("#duration").val().trim(),
+//     };
+//     var id = $(this).data("id");
 
-    console.log(newRecord)
-    $.ajax({
-        url: "/api/workouts" + id,
-        type: "PUT",
-        data: newRecord
-
-
-        // headers: {
-        //     Accept: "application/json, text/plain, */*",
-        //     "Content-Type": "application/json"
-        // },
-        // body: JSON.stringify(newRecord)
-    }).then(function () {
+//     console.log(newRecord)
+//     $.ajax({
+//         url: "/api/workouts" + id,
+//         type: "PUT",
+//         data: newRecord
+//     }).then(function () {
 
 
-        console.log("worked")
-        location.reload();
-    })
+//         console.log("worked")
+
+//     })
 
 
-})
+// })
+
+//submits new workout to the db
 
 $("#cardioComplete").on("click", function (event) {
 
@@ -113,75 +102,89 @@ $("#cardioComplete").on("click", function (event) {
         url: "/api/workouts",
         type: "POST",
         data: newRecord
-
-
-        // headers: {
-        //     Accept: "application/json, text/plain, */*",
-        //     "Content-Type": "application/json"
-        // },
-        // body: JSON.stringify(newRecord)
     }).then(function () {
         console.log("worked")
-        location.reload();
+
 
     })
 })
 
 
+// $("#cardioUpdate").on("click", function (event) {
 
-$("#cardioUpdate").on("click", function (event) {
+//     event.preventDefault();
+//     var newRecord = {
+//         exName: $("#CardioName").val().trim(),
+//         distance: $("#distance").val().trim(),
+//         duration: $("#durationCardio").val().trim(),
+//     };
 
-    event.preventDefault();
-    var newRecord = {
-        exName: $("#CardioName").val().trim(),
-        distance: $("#distance").val().trim(),
-        duration: $("#durationCardio").val().trim(),
-
-    };
-
-    var id = $(this).data("id");
-
-    console.log(newRecord)
-
-    $.ajax({
-        url: "/api/workouts/" + id,
-        type: "PUT",
-        data: newRecord
-
-
-        // headers: {
-        //     Accept: "application/json, text/plain, */*",
-        //     "Content-Type": "application/json"
-        // },
-        // body: JSON.stringify(newRecord)
-    }).then(function () {
-        console.log("worked")
-        location.reload();
-
-    })
-})
-
-
-
-
-
-
-// $("#showAll").on("click", function () {
-
-//     console.log("working")
+//     var id = $(this).data("id");
+//     console.log(newRecord)
 
 //     $.ajax({
-//         url: "/api/workouts",
-//         type: "GET",
-//     }).then(function (data) {
-
-//         console.log(data)
-//         let recentWorkoutDiv = $("<div>");
-//         let recent = $("<button>");
-//         recent.innerHtml = data.exName
-//         recentWorkoutDiv.append(recent);
-//         $(".container").append(recentWorkoutDiv);
+//         url: "/api/workouts/",
+//         type: "PUT",
+//         data: newRecord
+//     }).then(function () {
+//         console.log("worked")
 
 
 //     })
 // })
+
+//when server runs makes a get request to display all recents workouts
+$(document).ready(function () {
+    $.ajax({
+        url: '/api/workouts',
+        method: 'GET'
+    }).then(data => {
+        data.forEach(element => {
+
+            console.log(element.exName)
+            console.log(element._id)
+            var pNew = $("<button>");
+            pNew.addClass("recentBtn ")
+            pNew.attr("data-id");
+
+            var recentWorkout = element.exName
+            pNew.append(recentWorkout)
+            $(".allWorkouts").append(pNew);
+            return
+        });
+
+
+    }).then(
+
+    )
+})
+
+
+$(".allWorkouts").on("click", function () {
+
+
+
+    $.ajax({
+        url: "/api/workouts/",
+        type: "GET"
+
+    }).then(function (res) {
+
+        // Reload the page to get the updated list
+        console.log(res)
+
+    }
+    );
+});
+
+
+//set up the heigh of modal when it's showing
+$('#myModal').on('show.bs.modal', function () {
+    $('.modal-content').css('height', $(window).height() * 0.1);
+});
+
+$(".closeIcon").on("click", function () {
+    location.reload()
+
+
+})

@@ -4,7 +4,6 @@ const express = require("express");
 const mongoose = require("mongoose");
 const logger = require("morgan");
 
-
 //connection to the models folder
 const Workout = require("./models/workoutModel");
 
@@ -41,20 +40,42 @@ app.get("/api/workouts", function (req, res) {
     })
 })
 
+app.get("/api/workouts/:id", function (req, res) {
 
-//    
-app.put("/api/workouts/:id", function (req, res) {
+    Workout.findOne({
+
+
+        _id: req.params.id
+    })
+        .then((doc) => {
+            if (doc) {
+                console.log(doc);
+            } else {
+                console.log("no data exist for this id");
+            }
+
+
+
+        }
+        )
+})
+
+
+
+
+
+
+app.put("/api/workouts/", function (req, res) {
     var query = req.body
-    Workout.findOneAndUpdate(query {}, sort({ date: -1 }).then(function (err, docs) {
+    Workout.update({}, { sort: { name: 1 } }).then(function (data, err) {
 
-        console.log(docs)// executes
+        console.log(data)// executes
+        res.send(data)
         if (err) throw err
 
-
-
     })
-    )
 })
+
 
 
 module.exports = app
