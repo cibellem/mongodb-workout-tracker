@@ -10,7 +10,7 @@ It's a simple CRUD application where you can store your routines after completin
 mongoDB, mongoose, express.js, Bootstrap, Moment.js
 
 
-## Future DEvelopment
+# Future Development
 Add some type of data vizualization with user's daily progress;
 Add updates on previous routines
 
