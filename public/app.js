@@ -142,13 +142,15 @@ $(document).ready(function () {
         data.forEach(element => {
 
             console.log(element.exName)
+            console.log(element.distance)
+            console.log(element.duration)
             console.log(element._id)
             var pNew = $("<button>");
             pNew.addClass("recentBtn ")
             pNew.attr("data-id");
 
             var recentWorkout = element.exName
-            pNew.append(recentWorkout)
+            pNew.prepend(recentWorkout)
             $(".allWorkouts").append(pNew);
             return
         });

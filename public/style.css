@@ -1,16 +1,14 @@
 body {
-    background-color : #91bd3a;
-
-  
+    background-color : #91bd3a;  
 }
+
 
 
 
 .logo {
     font-family: 'Lato', sans-serif;
     letter-spacing: 1px;
-    color: white;
-   
+    color: white;   
    font-size: 50px;
 }
 .newEx{
@@ -18,9 +16,6 @@ body {
     font-size: 18px;
     color: black;
     font-weight: bold;
-    
-
-
 }
 
 .timeNow{
@@ -28,6 +23,16 @@ body {
     letter-spacing: 0.5px;
     
 }
+
+
+.resistenceContainer{
+    margin-left: 180px;
+}
+
+.cardioContainer{
+    margin-left: 180px;
+} 
+
 
 .btnAdd {
 
@@ -44,8 +49,7 @@ body {
     text-decoration: none;
     font-family: 'Padauk', sans-serif;
     border-bottom: solid 3px #c5c3c3;
-    font-size: 15px;    
-    
+    font-size: 15px;        
     opacity: 0.5;
     letter-spacing: 1.0px;
     color:black;
@@ -60,11 +64,11 @@ body {
 .recentBtn {
     
 
-    border-radius: 10px;
+    border-radius: 20px;
     width: 80px;       
     text-align: center;
     vertical-align: middle;
-    background-color: greenyellow;      
+    background-color: gold;      
     text-decoration: none;
     font-family: 'Padauk', sans-serif;  
     font-size: 16px;      
@@ -73,9 +77,9 @@ body {
     border: 2px gray ;
     color: black;
     margin-top: 10px;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
     padding: 8px;
-    text-shadow: 1px 1px 2px silver;
+    text-shadow: 1px 2px 2px silver;
     box-shadow: 0px 2px 4px rgba(78, 77, 77, 0.616);
 }
 
@@ -84,25 +88,26 @@ body {
     color: white;
 }
 
-form{
+/* form{
   justify-items: center;
   padding: 0 !important;
   display: inline !important;  
   font-family: 'Lato', sans-serif;
   letter-spacing: 0.5;
   
-}
+} */
 
 input{
     list-style: none;
     text-decoration: none;
     box-shadow: 1px 1px rgba(0, 0, 0, 0.616);
-    outline-style: none !important;
+   
+}
+input:focus, textarea:focus, select:focus{
+    outline: none;
 }
 
-.container{
-   margin: auto;
-}
+
 
 .closeIcon {
     font-size: 25px;
@@ -116,30 +121,17 @@ input{
     color: silver;
     
 }
-/* input[type="text"],
-select.form-control, input{
-  
-  border: none;
-  text-decoration: none;
-  border-radius: 0;
-} */
 
 
-input[type="text"]:focus,
-select.form-control:focus,
-input:focus {
-  -webkit-box-shadow: none;
-  box-shadow: none;
- 
-}
-    
+
 .recentTitle{
     font-size: 25px;
-    font-family: 'Padauk', sans-serif;  
-    letter-spacing: 0.5px;
+    font-family: 'Padauk', sans-serif;      
     font-weight: lighter;
-    color: white;
+    color: black;
     margin-top: 0 auto;
+    text-shadow: 1px 1px 1px rgb(236, 236, 236);
+   
 
 }
 .hide {
@@ -180,8 +172,34 @@ input:focus {
     
 }
 
+
+@media screen and (max-width: 1000px) {
+    .resistenceContainer{
+        margin: 0;
+     }
+     
+     .cardioContainer{
+        margin: 0;
+     }
+     
+     form {
+        width: 100%;
+        margin-left: auto;
+      }
+
+ }
+
+
 @media screen and (max-width: 576px) { 
 
+    .resistenceContainer{
+       margin: auto;
+    }
+    
+    .cardioContainer{
+       margin: auto;
+    }
+    
     
 form {
     width: 100%;
@@ -190,7 +208,7 @@ form {
 .logo{
     font-size: 40px;
 }
-.greeting{
+.divRecents{
     display: none;
 }
   
