@@ -63,8 +63,6 @@ app.get("/api/workouts/:id", function (req, res) {
 
 
 
-
-
 app.put("/api/workouts/", function (req, res) {
     var query = req.body
     Workout.update({}, { sort: { name: 1 } }).then(function (data, err) {
